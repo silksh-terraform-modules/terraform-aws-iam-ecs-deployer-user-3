@@ -1,2 +1,2 @@
-# terraform-aws-iam-deployer-user
+# terraform-aws-iam-ecs-deployer-user
 Creates user for deployment

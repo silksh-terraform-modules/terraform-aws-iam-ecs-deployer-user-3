@@ -1,6 +1,6 @@
 ### dopisac mozliwosc wrzucania konfigow do bucketa env_variables zdefiniowanego w ECS
 
-resource "aws_iam_group" "this" {
+resource "aws_iam_group" "deployer" {
   name = "ecs-deployer-${var.env_name}"
   path = "/"
 }

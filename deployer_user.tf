@@ -1,5 +1,5 @@
 resource "aws_iam_user" "this" {
-  name = "${user_prefix}-${var.env_name}"
+  name = "${var.user_prefix}-${var.env_name}"
   tags = {
     description = "uzytkownik z mozliwoscia deploymentu aplikacji ${var.env_name}"
   }

@@ -1,5 +1,6 @@
 data "aws_route53_zone" "zone" {
-  name         = "${var.tld}."
+  for_each = toset(var.tld)
+  name         = "${each.key}."
 }
 
 data "aws_caller_identity" "current" {}

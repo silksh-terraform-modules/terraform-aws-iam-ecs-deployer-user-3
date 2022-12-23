@@ -7,7 +7,7 @@ variable "env_name" {
 }
 
 variable "tld" {
-  default = ""
+  default = []
 }
 
 variable "env_variables_s3_bucket_id" {

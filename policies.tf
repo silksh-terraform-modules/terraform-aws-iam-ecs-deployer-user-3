@@ -37,9 +37,7 @@ data "aws_iam_policy_document" "route53-allow-change-zone" {
       "route53:ChangeResourceRecordSets",
       "route53:ListResourceRecordSets"
     ]
-    resources = [
-      "arn:aws:route53:::hostedzone/${data.aws_route53_zone.zone.id}"
-    ]
+    resources = formatlist("arn:aws:route53:::hostedzone/%s", [for id in data.aws_route53_zone.zone : id.id])
   }
 }
 

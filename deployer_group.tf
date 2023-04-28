@@ -11,11 +11,11 @@ resource "aws_iam_group_policy" "ecs-tasks-restart" {
   policy = data.aws_iam_policy_document.ecs-tasks-restart.json
 }
 
-resource "aws_iam_group_policy" "route53-allow-change-zone" {
-  name  = "route53-allow-change-zone-${var.env_name}"
-  group = aws_iam_group.this.id
-  policy = data.aws_iam_policy_document.route53-allow-change-zone.json
-}
+# resource "aws_iam_group_policy" "route53-allow-change-zone" {
+#   name  = "route53-allow-change-zone-${var.env_name}"
+#   group = aws_iam_group.this.id
+#   policy = data.aws_iam_policy_document.route53-allow-change-zone.json
+# }
 
 resource "aws_iam_group_policy" "ecr" {
   name = "deployer-allow-use-ecr-${var.env_name}"

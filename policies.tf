@@ -31,15 +31,15 @@ data "aws_iam_policy_document" "ecs-tasks-restart" {
   }
 }
 
-data "aws_iam_policy_document" "route53-allow-change-zone" {
-  statement {
-    actions = [
-      "route53:ChangeResourceRecordSets",
-      "route53:ListResourceRecordSets"
-    ]
-    resources = formatlist("arn:aws:route53:::hostedzone/%s", [for id in data.aws_route53_zone.zone : id.id])
-  }
-}
+# data "aws_iam_policy_document" "route53-allow-change-zone" {
+#   statement {
+#     actions = [
+#       "route53:ChangeResourceRecordSets",
+#       "route53:ListResourceRecordSets"
+#     ]
+#     resources = formatlist("arn:aws:route53:::hostedzone/%s", [for id in data.aws_route53_zone.zone : id.id])
+#   }
+# }
 
 
 data "aws_iam_policy_document" "ecr" {
